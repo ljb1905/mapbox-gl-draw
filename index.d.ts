@@ -15,7 +15,7 @@ import {
     MapboxEvent,
     MapMouseEvent as MapboxMapMouseEvent,
     MapTouchEvent as MapboxMapTouchEvent,
-} from 'kt-maplibre-gl';
+} from 'mapbox-gl';
 
 export = MapboxDraw;
 export as namespace MapboxDraw;

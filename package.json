@@ -1,6 +1,6 @@
 {
   "name": "maplibre-gl-draw",
-  "version": "1.5.0",
+  "version": "1.5.2",
   "description": "A drawing component for Mapbox GL JS",
   "author": "mapbox",
   "license": "ISC",
