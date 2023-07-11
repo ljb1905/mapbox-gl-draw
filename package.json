@@ -1,8 +1,7 @@
 {
-  "name": "@mapbox/mapbox-gl-draw",
-  "version": "1.4.2",
+  "name": "maplibre-gl-draw",
+  "version": "1.4.4",
   "description": "A drawing component for Mapbox GL JS",
-  "homepage": "https://github.com/mapbox/mapbox-gl-draw",
   "author": "mapbox",
   "license": "ISC",
   "main": "dist/mapbox-gl-draw.js",
@@ -27,11 +26,7 @@
   },
   "files": [
     "dist/mapbox-gl-draw*"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mapbox/mapbox-gl-draw.git"
-  },
+  ],  
   "keywords": [
     "webgl",
     "mapbox",
@@ -82,5 +77,9 @@
     "hat": "0.0.3",
     "lodash.isequal": "^4.5.0",
     "xtend": "^4.0.2"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
   }
 }

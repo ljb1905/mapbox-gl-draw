@@ -1,6 +1,6 @@
 import createSyntheticEvent from 'synthetic-dom-events';
 
-const classList = ['mapboxgl-canvas'];
+const classList = ['maplibregl-canvas'];
 classList.contains = function(cls) {
   return classList.indexOf(cls) >= 0;
 };
