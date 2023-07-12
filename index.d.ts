@@ -12,10 +12,10 @@ import {
     IControl,
     LineLayer,
     Map,
-    MapboxEvent,
+    MapLibreEvent,
     MapMouseEvent as MapboxMapMouseEvent,
     MapTouchEvent as MapboxMapTouchEvent,
-} from 'mapbox-gl';
+} from 'kt-maplibre-gl';
 
 export = MapboxDraw;
 export as namespace MapboxDraw;
@@ -394,13 +394,13 @@ declare namespace MapboxDraw {
     interface Lib {
         CommonSelectors: {
             isOfMetaType: (e: MapMouseEvent | MapTouchEvent) => boolean;
-            isShiftMousedown: (e: MapboxEvent) => boolean;
+            isShiftMousedown: (e: MapLibreEvent) => boolean;
             isActiveFeature: (e: MapMouseEvent | MapTouchEvent) => boolean;
             isInactiveFeature: (e: MapMouseEvent | MapTouchEvent) => boolean;
             noTarget: (e: MapMouseEvent | MapTouchEvent) => boolean;
             isFeature: (e: MapMouseEvent | MapTouchEvent) => boolean;
             isVertex: (e: MapMouseEvent | MapTouchEvent) => boolean;
-            isShiftDown: (e: MapboxEvent) => boolean;
+            isShiftDown: (e: MapLibreEvent) => boolean;
             isEscapeKey: (e: KeyboardEvent) => boolean;
             isEnterKey: (e: KeyboardEvent) => boolean;
             isTrue: () => boolean;
@@ -547,6 +547,8 @@ declare namespace MapboxDraw {
     }
 }
 
+declare type ControlPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right";
+
 declare class MapboxDraw implements IControl {
     static modes: MapboxDraw.Modes;
     static constants: MapboxDraw.Constants;
@@ -554,7 +556,7 @@ declare class MapboxDraw implements IControl {
 
     modes: MapboxDraw.DrawModes;
 
-    getDefaultPosition: () => string;
+    getDefaultPosition: () => ControlPosition;
 
     constructor(options?: MapboxDraw.MapboxDrawOptions);
 
@@ -597,7 +599,7 @@ declare class MapboxDraw implements IControl {
 
     setFeatureProperty(featureId: string, property: string, value: any): this;
 
-    onAdd(map: mapboxgl.Map): HTMLElement;
+    onAdd(map: Map): HTMLElement;
 
-    onRemove(map: mapboxgl.Map): any;
+    onRemove(map: Map): any;
 }
