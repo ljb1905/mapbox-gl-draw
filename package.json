@@ -1,6 +1,6 @@
 {
   "name": "maplibre-gl-draw",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "A drawing component for Mapbox GL JS",
   "author": "mapbox",
   "license": "ISC",
@@ -27,7 +27,7 @@
   "files": [
     "dist/mapbox-gl-draw*",
     "index.d.ts"
-  ],  
+  ],
   "keywords": [
     "webgl",
     "mapbox",
@@ -76,11 +76,12 @@
     "@mapbox/geojson-extent": "^1.0.1",
     "@mapbox/geojson-normalize": "^0.0.1",
     "@mapbox/point-geometry": "^0.1.0",
+    "@types/geojson": "*",
+    "@types/mapbox-gl": "*",
     "hat": "0.0.3",
     "lodash.isequal": "^4.5.0",
-    "xtend": "^4.0.2",
-    "@types/geojson": "*",
-    "@types/mapbox-gl": "*"
+    "maplibre-gl": "^3.2.0",
+    "xtend": "^4.0.2"
   },
   "directories": {
     "doc": "docs",
