@@ -1,11 +1,11 @@
 {
   "name": "maplibre-gl-draw",
-  "version": "1.5.3",
+  "version": "1.5.6",
   "description": "A drawing component for Mapbox GL JS",
   "author": "mapbox",
   "license": "ISC",
-  "main": "dist/mapbox-gl-draw.js",
-  "browser": "dist/mapbox-gl-draw.js",
+  "main": "dist/mapbox-gl-draw-unminified.js",
+  "browser": "dist/mapbox-gl-draw-unminified.js",
   "style": "dist/mapbox-gl-draw.css",
   "scripts": {
     "docs": "run-s docs-modes-life-cycle docs-modes-get-and-set",
@@ -80,7 +80,6 @@
     "@types/mapbox-gl": "*",
     "hat": "0.0.3",
     "lodash.isequal": "^4.5.0",
-    "maplibre-gl": "^3.2.0",
     "xtend": "^4.0.2"
   },
   "directories": {

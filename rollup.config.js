@@ -13,7 +13,7 @@ export default {
   output: {
     name: 'MapboxDraw',
     file: outputFile,
-    format: 'umd',
+    format: 'es',
     sourcemap: true,
     indent: false
   },
