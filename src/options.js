@@ -3,6 +3,7 @@ import * as Constants from './constants';
 
 import styles from './lib/theme';
 import modes from './modes/index';
+import { SRStyle } from "./lib/SRStyle";
 
 const defaultOptions = {
   defaultMode: Constants.modes.SIMPLE_SELECT,
@@ -12,7 +13,7 @@ const defaultOptions = {
   touchBuffer: 25,
   boxSelect: true,
   displayControlsDefault: true,
-  styles,
+  styles : SRStyle,
   modes,
   controls: {},
   userProperties: false

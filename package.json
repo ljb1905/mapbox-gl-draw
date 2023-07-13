@@ -1,6 +1,6 @@
 {
   "name": "maplibre-gl-draw",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "description": "A drawing component for Mapbox GL JS",
   "author": "mapbox",
   "license": "ISC",
@@ -25,6 +25,8 @@
     "start": "run-p build-token watch watch-bench start-server"
   },
   "files": [
+    "dist/img/rotate.png",
+    "dist/img/scale.png",
     "dist/mapbox-gl-draw*",
     "index.d.ts"
   ],
@@ -81,7 +83,8 @@
     "hat": "0.0.3",
     "lodash.isequal": "^4.5.0",
     "xtend": "^4.0.2",
-    "kt-maplibre-gl": "*"
+    "kt-maplibre-gl": "*",
+    "@turf/turf": "5.1.6"
   },
   "directories": {
     "doc": "docs",

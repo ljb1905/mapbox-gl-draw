@@ -5,6 +5,7 @@ import isClick from './lib/is_click';
 import isTap from './lib/is_tap';
 import * as Constants from './constants';
 import objectToMode from './modes/object_to_mode';
+import {SRCenter} from "./lib/SRCenter";
 
 export default function(ctx) {
 
@@ -129,6 +130,22 @@ export default function(ctx) {
   events.keydown = function(event) {
     const isMapElement = (event.srcElement || event.target).classList.contains('maplibregl-canvas');
     if (!isMapElement) return; // we only handle events on the map
+
+    if(event.keyCode === 	82) {
+      changeMode('SRMode', {
+        canScale: true,
+        canRotate: true, // only rotation enabled
+        canTrash: false, // disable feature delete
+      
+        rotatePivot: SRCenter.Center, // rotate around center
+        scaleCenter: SRCenter.Opposite, // scale around opposite vertex
+      
+        singleRotationPoint: true, // only one rotation point
+        rotationPointRadius: 1.2, // offset rotation point
+      
+        canSelectFeatures: true,
+      });
+    }
 
     if ((event.keyCode === 8 || event.keyCode === 46) && ctx.options.controls.trash) {
       event.preventDefault();
