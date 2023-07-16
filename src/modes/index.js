@@ -9,6 +9,7 @@ import SRMode from "./SRMode";
 export default {
   simple_select,
   direct_select,
+  draw_point,
   draw_polygon,
   draw_line_string,
   SRMode,
