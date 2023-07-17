@@ -40,6 +40,7 @@ declare namespace MapboxDraw {
         DRAW_POINT: 'draw_point';
         SIMPLE_SELECT: 'simple_select';
         DIRECT_SELECT: 'direct_select';
+        SCALE_ROTATE: 'srmode';
         STATIC: 'static';
     }
 
@@ -50,6 +51,7 @@ declare namespace MapboxDraw {
         trash?: boolean | undefined;
         combine_features?: boolean | undefined;
         uncombine_features?: boolean | undefined;
+        srmode?: boolean | undefined;
     }
 
     interface DrawActionableState {
@@ -278,6 +280,7 @@ declare namespace MapboxDraw {
         draw_point: DrawCustomMode;
         simple_select: DrawCustomMode;
         direct_select: DrawCustomMode;
+        srmode: DrawCustomMode;
     }
 
     interface Constants {
@@ -291,6 +294,7 @@ declare namespace MapboxDraw {
             CONTROL_BUTTON_TRASH: 'mapbox-gl-draw_trash';
             CONTROL_BUTTON_COMBINE_FEATURES: 'mapbox-gl-draw_combine';
             CONTROL_BUTTON_UNCOMBINE_FEATURES: 'mapbox-gl-draw_uncombine';
+            CONTROL_BUTTON_SRMODE: 'mapbox-gl-draw_srmode';
             CONTROL_GROUP: 'mapboxgl-ctrl-group';
             ATTRIBUTION: 'mapboxgl-ctrl-attrib';
             ACTIVE_BUTTON: 'active';
@@ -334,6 +338,7 @@ declare namespace MapboxDraw {
             DRAW_POINT: 'draw_point';
             SIMPLE_SELECT: 'simple_select';
             DIRECT_SELECT: 'direct_select';
+            SCALE_ROTATE: 'srmode';
             STATIC: 'static';
         };
 
