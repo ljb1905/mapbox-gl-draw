@@ -1,5 +1,6 @@
 import xtend from 'xtend';
 import * as Constants from './constants';
+import { SRCenter } from './lib/SRCenter';
 
 const classTypes = ['mode', 'feature', 'mouse'];
 
@@ -164,6 +165,32 @@ export default function(ctx) {
         title: 'Uncombine',
         onActivate: () => {
           ctx.events.uncombineFeatures();
+        }
+      });
+    }
+
+    if (controls.srmode) {
+      buttonElements.srmode = createControlButton('srmode', {
+        container: controlGroup,
+        className: Constants.classes.CONTROL_BUTTON_SRMODE,
+        title: 'SRMode',
+        onActivate: () => {
+          ctx.events.changeMode('SRMode', {
+              canScale: true,
+              canRotate: true, // only rotation enabled
+              canTrash: false, // disable feature delete
+            
+              rotatePivot: SRCenter.Center, // rotate around center
+              scaleCenter: SRCenter.Opposite, // scale around opposite vertex
+            
+              singleRotationPoint: true, // only one rotation point
+              rotationPointRadius: 1.2, // offset rotation point
+            
+              canSelectFeatures: true,
+            });
+        },
+        onDeactivate: () => {
+          ctx.events.changeMode(Constants.modes.SIMPLE_SELECT);
         }
       });
     }

@@ -8,6 +8,7 @@ export const classes = {
   CONTROL_BUTTON_TRASH: 'mapbox-gl-draw_trash',
   CONTROL_BUTTON_COMBINE_FEATURES: 'mapbox-gl-draw_combine',
   CONTROL_BUTTON_UNCOMBINE_FEATURES: 'mapbox-gl-draw_uncombine',
+  CONTROL_BUTTON_SRMODE: 'mapbox-gl-draw_srmode',
   CONTROL_GROUP: 'maplibregl-ctrl-group',
   ATTRIBUTION: 'maplibregl-ctrl-attrib',
   ACTIVE_BUTTON: 'active',
@@ -51,6 +52,7 @@ export const modes = {
   DRAW_POINT: 'draw_point',
   SIMPLE_SELECT: 'simple_select',
   DIRECT_SELECT: 'direct_select',
+  SCALE_ROTATE: 'srmode',
   STATIC: 'static'
 };
 

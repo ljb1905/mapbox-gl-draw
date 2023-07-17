@@ -25,7 +25,8 @@ const showControls = {
   polygon: true,
   trash: true,
   combine_features: true,
-  uncombine_features: true
+  uncombine_features: true,
+  srmode: true
 };
 
 const hideControls = {
@@ -34,7 +35,8 @@ const hideControls = {
   polygon: false,
   trash: false,
   combine_features: false,
-  uncombine_features: false
+  uncombine_features: false,
+  srmode: true
 };
 
 function addSources(styles, sourceBucket) {
