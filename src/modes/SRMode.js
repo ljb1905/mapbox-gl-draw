@@ -564,14 +564,21 @@ function parseSRCenter(value, defaultSRCenter = SRCenter.Center) {
   };
   
   SRMode.clickNoTarget = function (state, e) {
-    if (state.canSelectFeatures) this.changeMode(Constants.modes.SIMPLE_SELECT);
+    if (state.canSelectFeatures){
+      // activate 해제
+      state.feature.ctx.ui.deactivateButtons();
+      this.changeMode(Constants.modes.SIMPLE_SELECT);
+    } 
   };
   
   SRMode.clickInactive = function (state, e) {
-    if (state.canSelectFeatures)
+    if (state.canSelectFeatures){
+      // activate 해제
+      state.feature.ctx.ui.deactivateButtons();
       this.changeMode(Constants.modes.SIMPLE_SELECT, {
         featureIds: [e.featureTarget.properties.id],
       });
+    }
   };
   
   SRMode.onTrash = function () {

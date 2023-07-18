@@ -5,8 +5,6 @@ import { SRCenter } from './lib/SRCenter';
 const classTypes = ['mode', 'feature', 'mouse'];
 
 export default function(ctx) {
-
-
   const buttonElements = {};
   let activeButton = null;
 
@@ -214,6 +212,7 @@ export default function(ctx) {
     updateMapClasses,
     clearMapClasses,
     addButtons,
-    removeButtons
+    removeButtons,
+    deactivateButtons
   };
 }
