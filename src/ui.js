@@ -173,6 +173,11 @@ export default function(ctx) {
         className: Constants.classes.CONTROL_BUTTON_SRMODE,
         title: 'SRMode',
         onActivate: () => {
+          let tmp = ctx.store.getSelected();
+          if(tmp.length === 0 || tmp[0].type === "Point" || tmp[0].type === "MultiPoint"){
+            deactivateButtons();
+            return;
+          }
           ctx.events.changeMode('SRMode', {
               canScale: true,
               canRotate: true, // only rotation enabled
