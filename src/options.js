@@ -36,7 +36,7 @@ const hideControls = {
   trash: false,
   combine_features: false,
   uncombine_features: false,
-  srmode: true
+  srmode: false
 };
 
 function addSources(styles, sourceBucket) {
