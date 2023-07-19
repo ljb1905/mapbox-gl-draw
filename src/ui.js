@@ -104,6 +104,16 @@ export default function(ctx) {
 
     if (!controls) return controlGroup;
 
+    if (controls[Constants.types.POINT]) {
+      buttonElements[Constants.types.POINT] = createControlButton(Constants.types.POINT, {
+        container: controlGroup,
+        className: Constants.classes.CONTROL_BUTTON_POINT,
+        title: `Marker tool ${ctx.options.keybindings ? '(m)' : ''}`,
+        onActivate: () => ctx.events.changeMode(Constants.modes.DRAW_POINT),
+        onDeactivate: () => ctx.events.trash()
+      });
+    }
+    
     if (controls[Constants.types.LINE]) {
       buttonElements[Constants.types.LINE] = createControlButton(Constants.types.LINE, {
         container: controlGroup,
@@ -120,16 +130,6 @@ export default function(ctx) {
         className: Constants.classes.CONTROL_BUTTON_POLYGON,
         title: `Polygon tool ${ctx.options.keybindings ? '(p)' : ''}`,
         onActivate: () => ctx.events.changeMode(Constants.modes.DRAW_POLYGON),
-        onDeactivate: () => ctx.events.trash()
-      });
-    }
-
-    if (controls[Constants.types.POINT]) {
-      buttonElements[Constants.types.POINT] = createControlButton(Constants.types.POINT, {
-        container: controlGroup,
-        className: Constants.classes.CONTROL_BUTTON_POINT,
-        title: `Marker tool ${ctx.options.keybindings ? '(m)' : ''}`,
-        onActivate: () => ctx.events.changeMode(Constants.modes.DRAW_POINT),
         onDeactivate: () => ctx.events.trash()
       });
     }
