@@ -7,13 +7,14 @@ import buble from '@rollup/plugin-buble';
 import {terser} from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import image from '@rollup/plugin-image';
 
 export default {
   input: ['index.js'],
   output: {
     name: 'MapboxDraw',
     file: outputFile,
-    format: 'es',
+    format: 'esm',
     sourcemap: true,
     indent: false
   },
@@ -33,6 +34,7 @@ export default {
       // global keyword handling causes Webpack compatibility issues, so we disabled it:
       // https://github.com/mapbox/mapbox-gl-js/pull/6956
       ignoreGlobal: true
-    })
+    }),
+    image()
   ],
 };

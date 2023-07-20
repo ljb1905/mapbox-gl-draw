@@ -13,11 +13,12 @@ import distance from '@turf/distance';
 import destination from '@turf/destination';
 import transformRotate from '@turf/transform-rotate';
 import transformScale from '@turf/transform-scale';
+import rotate from "../../src/modes/img/rotate.png";
+import scale from "../../src/modes/img/scale.png";
+// const rotate = require('./img/rotate.png');
+// const scale = require('./img/scale.png');
 
 const SRMode = {}; //scale rotate mode
-
-var rotate = require('./img/rotate.png');
-var scale = require('./img/scale.png');
 
 function parseSRCenter(value, defaultSRCenter = SRCenter.Center) {
     if (value == undefined || value == null) return defaultSRCenter;
@@ -111,11 +112,18 @@ function parseSRCenter(value, defaultSRCenter = SRCenter.Center) {
     });
   
     var _this = this;
-    this.map.loadImage(rotate.default, function (error, image) {
+
+    //
+    // const img_rotate = new Image();
+    // img_rotate.src = "./img/rotate.png";
+    // const img_scale = new Image();
+    // img_scale.src = "./img/scale.png";
+
+    this.map.loadImage(rotate, function (error, image) {
       if (error) throw error;
       if (!_this.map.getImage('rotate')) _this.map.addImage('rotate', image);
     });
-    this.map.loadImage(scale.default, function (error, image) {
+    this.map.loadImage(scale, function (error, image) {
       if (error) throw error;
       if (!_this.map.getImage('scale')) _this.map.addImage('scale', image);
     });
