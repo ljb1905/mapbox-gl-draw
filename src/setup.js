@@ -84,25 +84,31 @@ export default function(ctx) {
     },
     addLayers() {
       // drawn features style
-      ctx.map.addSource(Constants.sources.COLD, {
-        data: {
-          type: Constants.geojsonTypes.FEATURE_COLLECTION,
-          features: []
-        },
-        type: 'geojson'
-      });
+      if(!ctx.map.getSource(Constants.sources.COLD)){
+        ctx.map.addSource(Constants.sources.COLD, {
+          data: {
+            type: Constants.geojsonTypes.FEATURE_COLLECTION,
+            features: []
+          },
+          type: 'geojson'
+        });
+      }      
 
       // hot features style
-      ctx.map.addSource(Constants.sources.HOT, {
-        data: {
-          type: Constants.geojsonTypes.FEATURE_COLLECTION,
-          features: []
-        },
-        type: 'geojson'
-      });
+      if(!ctx.map.getSource(Constants.sources.HOT)){
+        ctx.map.addSource(Constants.sources.HOT, {
+          data: {
+            type: Constants.geojsonTypes.FEATURE_COLLECTION,
+            features: []
+          },
+          type: 'geojson'
+        });
+      }      
 
       ctx.options.styles.forEach((style) => {
-        ctx.map.addLayer(style);
+        if(!ctx.map.getLayer(style.id)){
+          ctx.map.addLayer(style);
+        }
       });
 
       ctx.store.setDirty(true);
