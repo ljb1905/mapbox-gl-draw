@@ -1,3 +1,4 @@
+// kt / default style 추가
 export const SRStyle = [
     {
       id: 'gl-draw-polygon-fill-inactive',

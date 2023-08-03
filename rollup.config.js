@@ -7,6 +7,7 @@ import buble from '@rollup/plugin-buble';
 import {terser} from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+// kt / image bundling을 위해 플러그인 추가
 import image from '@rollup/plugin-image';
 
 export default {
@@ -14,7 +15,7 @@ export default {
   output: {
     name: 'MapboxDraw',
     file: outputFile,
-    format: 'esm',
+    format: 'esm', // kt / playground(ESModule)에서 사용하기 위해 ESM으로 번들링
     sourcemap: true,
     indent: false
   },
@@ -35,6 +36,6 @@ export default {
       // https://github.com/mapbox/mapbox-gl-js/pull/6956
       ignoreGlobal: true
     }),
-    image()
+    image() // kt / image bundling을 위해 플러그인 추가
   ],
 };

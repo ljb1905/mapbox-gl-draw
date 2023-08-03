@@ -104,6 +104,7 @@ export default function(ctx) {
 
     if (!controls) return controlGroup;
 
+    // kt / point -> line -> polygon 순서로 버튼 표출
     if (controls[Constants.types.POINT]) {
       buttonElements[Constants.types.POINT] = createControlButton(Constants.types.POINT, {
         container: controlGroup,
@@ -167,6 +168,8 @@ export default function(ctx) {
       });
     }
 
+    // kt / SRMode 생성
+    // kt / buttonEvent 생성
     if (controls.srmode) {
       buttonElements.srmode = createControlButton('srmode', {
         container: controlGroup,
@@ -174,6 +177,7 @@ export default function(ctx) {
         title: 'SRMode',
         onActivate: () => {
           let tmp = ctx.store.getSelected();
+          // feature 없이 선택 | point 선택 후 SRMode 진입 불가능하게 & 버튼 클래스 변경 막기
           if(tmp.length === 0 || tmp[0].type === "Point" || tmp[0].type === "MultiPoint"){
             deactivateButtons();
             return;
@@ -193,6 +197,7 @@ export default function(ctx) {
             });
         },
         onDeactivate: () => {
+          // simple_select 모드로 변경
           ctx.events.changeMode(Constants.modes.SIMPLE_SELECT);
         }
       });
@@ -211,6 +216,7 @@ export default function(ctx) {
     });
   }
 
+  // 버튼 비활성 export
   return {
     setActiveButton,
     queueMapClasses,

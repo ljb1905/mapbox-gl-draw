@@ -5,7 +5,6 @@ import isClick from './lib/is_click';
 import isTap from './lib/is_tap';
 import * as Constants from './constants';
 import objectToMode from './modes/object_to_mode';
-import {SRCenter} from "./lib/SRCenter";
 
 export default function(ctx) {
 
@@ -128,6 +127,7 @@ export default function(ctx) {
   const isKeyModeValid = code => !(code === 8 || code === 46 || (code >= 48 && code <= 57));
 
   events.keydown = function(event) {
+    // kt / class명 maplibre로 변경 반영 
     const isMapElement = (event.srcElement || event.target).classList.contains('maplibregl-canvas');
     if (!isMapElement) return; // we only handle events on the map
 

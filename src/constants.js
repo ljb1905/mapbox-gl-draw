@@ -1,4 +1,6 @@
 export const classes = {
+  // kt / class명 maplibre로 변경 반영 
+  // kt / SRMode 추가
   CONTROL_BASE: 'maplibregl-ctrl',
   CONTROL_PREFIX: 'maplibregl-ctrl-',
   CONTROL_BUTTON: 'mapbox-gl-draw_ctrl-draw-btn',
@@ -46,6 +48,7 @@ export const geojsonTypes = {
   MULTI_POLYGON: 'MultiPolygon'
 };
 
+// kt / SRMode 추가
 export const modes = {
   DRAW_LINE_STRING: 'draw_line_string',
   DRAW_POLYGON: 'draw_polygon',

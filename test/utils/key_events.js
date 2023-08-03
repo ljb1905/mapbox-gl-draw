@@ -1,5 +1,6 @@
 import createSyntheticEvent from 'synthetic-dom-events';
 
+// kt / class명 maplibre로 변경 반영 
 const classList = ['maplibregl-canvas'];
 classList.contains = function(cls) {
   return classList.indexOf(cls) >= 0;

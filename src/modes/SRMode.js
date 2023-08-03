@@ -13,6 +13,9 @@ import distance from '@turf/distance';
 import destination from '@turf/destination';
 import transformRotate from '@turf/transform-rotate';
 import transformScale from '@turf/transform-scale';
+
+// kt / playground(ESModule)에서 사용하기 위해 require 대신 import 사용
+// kt / package.json에서 해당 파일 포함 빌드 
 import rotate from "../../src/modes/img/rotate.png";
 import scale from "../../src/modes/img/scale.png";
 // const rotate = require('./img/rotate.png');
@@ -119,6 +122,7 @@ function parseSRCenter(value, defaultSRCenter = SRCenter.Center) {
     // const img_scale = new Image();
     // img_scale.src = "./img/scale.png";
 
+    // kt / require에서 import로 이미지 호출 방식 변경 & loadImage 파라미터 타입 변경(rotate.default -> rotate)
     this.map.loadImage(rotate, function (error, image) {
       if (error) throw error;
       if (!_this.map.getImage('rotate')) _this.map.addImage('rotate', image);

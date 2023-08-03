@@ -5,6 +5,11 @@
 //                 Joel Daros <https://github.com/joel-daros>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
+
+// kt / 타입 파일 따로 추가
+// package.json에 files 옵션으로 빌드 / types 옵션으로 타입 지정
+// kt-maplibre-gl에서 import
+// 각 Mode & Class에 SRMode 추가
 import { BBox, Feature, FeatureCollection, GeoJSON, GeoJsonTypes, Geometry, Point, Position } from 'geojson';
 import {
     CircleLayer,
@@ -12,7 +17,7 @@ import {
     IControl,
     LineLayer,
     Map,
-    MapLibreEvent,
+    MapLibreEvent, // kt / MapLibre로 변경
     MapMouseEvent as MapboxMapMouseEvent,
     MapTouchEvent as MapboxMapTouchEvent,
 } from 'kt-maplibre-gl';
@@ -42,7 +47,7 @@ declare namespace MapboxDraw {
         DIRECT_SELECT: 'direct_select';
         SCALE_ROTATE: 'srmode';
         STATIC: 'static';
-    }
+    } // kt / srmode 추가
 
     interface MapboxDrawControls {
         point?: boolean | undefined;
@@ -399,13 +404,13 @@ declare namespace MapboxDraw {
     interface Lib {
         CommonSelectors: {
             isOfMetaType: (e: MapMouseEvent | MapTouchEvent) => boolean;
-            isShiftMousedown: (e: MapLibreEvent) => boolean;
+            isShiftMousedown: (e: MapLibreEvent) => boolean; // kt / maplibre 이벤트로 변경
             isActiveFeature: (e: MapMouseEvent | MapTouchEvent) => boolean;
             isInactiveFeature: (e: MapMouseEvent | MapTouchEvent) => boolean;
             noTarget: (e: MapMouseEvent | MapTouchEvent) => boolean;
             isFeature: (e: MapMouseEvent | MapTouchEvent) => boolean;
             isVertex: (e: MapMouseEvent | MapTouchEvent) => boolean;
-            isShiftDown: (e: MapLibreEvent) => boolean;
+            isShiftDown: (e: MapLibreEvent) => boolean; // kt / maplibre 이벤트로 변경
             isEscapeKey: (e: KeyboardEvent) => boolean;
             isEnterKey: (e: KeyboardEvent) => boolean;
             isTrue: () => boolean;
@@ -552,6 +557,7 @@ declare namespace MapboxDraw {
     }
 }
 
+// kt / position 타입 지정
 declare type ControlPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right";
 
 declare class MapboxDraw implements IControl {
@@ -561,7 +567,7 @@ declare class MapboxDraw implements IControl {
 
     modes: MapboxDraw.DrawModes;
 
-    getDefaultPosition: () => ControlPosition;
+    getDefaultPosition: () => ControlPosition; // kt / position 타입 지정
 
     constructor(options?: MapboxDraw.MapboxDrawOptions);
 
@@ -604,7 +610,7 @@ declare class MapboxDraw implements IControl {
 
     setFeatureProperty(featureId: string, property: string, value: any): this;
 
-    onAdd(map: Map): HTMLElement;
+    onAdd(map: Map): HTMLElement; // kt / kt map에서 호출
 
-    onRemove(map: Map): any;
+    onRemove(map: Map): any; // kt / kt map에서 호출
 }

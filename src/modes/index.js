@@ -6,6 +6,8 @@ import draw_polygon from './draw_polygon';
 import draw_line_string from './draw_line_string';
 import SRMode from "./SRMode";
 
+// kt / SRMode 추가
+
 export default {
   simple_select,
   direct_select,

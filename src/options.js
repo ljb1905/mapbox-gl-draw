@@ -19,6 +19,7 @@ const defaultOptions = {
   userProperties: false
 };
 
+// kt / SRMode 추가
 const showControls = {
   point: true,
   line_string: true,
@@ -29,6 +30,7 @@ const showControls = {
   srmode: true
 };
 
+// kt / SRMode 추가
 const hideControls = {
   point: false,
   line_string: false,

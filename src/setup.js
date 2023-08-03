@@ -84,6 +84,7 @@ export default function(ctx) {
     },
     addLayers() {
       // drawn features style
+      // kt / getSource로 Source id 중복 체크
       if(!ctx.map.getSource(Constants.sources.COLD)){
         ctx.map.addSource(Constants.sources.COLD, {
           data: {
@@ -95,6 +96,7 @@ export default function(ctx) {
       }      
 
       // hot features style
+      // kt / getSource로 Source id 중복 체크
       if(!ctx.map.getSource(Constants.sources.HOT)){
         ctx.map.addSource(Constants.sources.HOT, {
           data: {
@@ -106,6 +108,7 @@ export default function(ctx) {
       }      
 
       ctx.options.styles.forEach((style) => {
+        // kt / getLayer로 Layer id 중복 체크
         if(!ctx.map.getLayer(style.id)){
           ctx.map.addLayer(style);
         }
